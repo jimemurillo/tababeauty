@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Productos SkinCare</title>
+  <style>
+    /* Reset & base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fef9f7;
+      color: #4a4a4a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    /* Header */
+    header {
+      background: #ffeef8;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(255 192 203 / 0.3);
+    }
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: #d46a7e;
+      letter-spacing: 2px;
+    }
+    header p {
+      margin: 0.3rem 0 0 0;
+      font-size: 1.2rem;
+      color: #9b6b7a;
+      font-style: italic;
+    }
+
+    /* Main container */
+    main {
+      flex-grow: 1;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* Product grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+      gap: 1.8rem;
+    }
+
+    /* Individual product card */
+    .product-card {
+      background: #fff0f5;
+      border-radius: 18px;
+      box-shadow: 0 4px 12px rgba(212,106,126,0.15);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 18px rgba(212,106,126,0.3);
+    }
+
+    .product-image-container {
+      position: relative;
+      width: 100%;
+      padding-top: 100%; /* square ratio */
+      overflow: hidden;
+    }
+    .product-image-container img {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      border-bottom-left-radius: 18px;
+      border-bottom-right-radius: 0;
+      border-top-left-radius: 18px;
+      border-top-right-radius: 18px;
+    }
+
+    .product-info {
+      padding: 1rem 1.3rem 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .product-name {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin: 0 0 0.4rem;
+      color: #7a3956;
+      line-height: 1.3;
+    }
+    .product-desc {
+      font-size: 0.9rem;
+      color: #a87c8c;
+      flex-grow: 1;
+      margin-bottom: 0.8rem;
+    }
+    .product-price {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #d46a7e;
+    }
+
+    /* Footer */
+    footer {
+      background: #ffeef8;
+      color: #9b6b7a;
+      text-align: center;
+      padding: 1.4rem 1rem;
+      font-size: 0.9rem;
+      box-shadow: 0 -2px 8px rgba(255 192 203 / 0.3);
+      margin-top: 3rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      main {
+        padding: 1rem;
+      }
+      .product-card {
+        border-radius: 14px;
+      }
+      .product-info {
+        padding: 0.8rem 1rem 1rem;
+      }
+      .product-name {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Belleza Natural</h1>
+    <p>Productos de SkinCare que cuidan tu piel con amor</p>
+  </header>
+  <main>
+    <div class="product-grid">
+      <article class="product-card" tabindex="0">
+        <div class="product-image-container">
+          <img src="https://cdn.pixabay.com/photo/2018/03/01/17/58/beauty-3192734_1280.jpg" alt="Crema Hidratante Facial" />
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">Crema Hidratante Facial</h2>
+          <p class="product-desc">Hidratación profunda y textura ligera para todo tipo de piel.</p>
+          <div class="product-price">$18.99 USD</div>
+        </div>
+      </article>
+
+      <article class="product-card" tabindex="0">
+        <div class="product-image-container">
+          <img src="https://cdn.pixabay.com/photo/2017/03/27/13/35/beauty-2178569_1280.jpg" alt="Sérum Reparador" />
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">Sérum Reparador</h2>
+          <p class="product-desc">Con vitamina C para iluminar y mejorar la textura de la piel.</p>
+          <div class="product-price">$25.50 USD</div>
+        </div>
+      </article>
+
+      <article class="product-card" tabindex="0">
+        <div class="product-image-container">
+          <img src="https://cdn.pixabay.com/photo/2020/06/03/10/50/acne-5256820_1280.jpg" alt="Gel Limpiador Suave" />
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">Gel Limpiador Suave</h2>
+          <p class="product-desc">Limpia profundamente sin resecar la piel, ideal para uso diario.</p>
+          <div class="product-price">$14.75 USD</div>
+        </div>
+      </article>
+
+      <article class="product-card" tabindex="0">
+        <div class="product-image-container">
+          <img src="https://cdn.pixabay.com/photo/2016/11/22/07/50/beauty-1845615_1280.jpg" alt="Protector Solar SPF 50" />
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">Protector Solar SPF 50</h2>
+          <p class="product-desc">Protección alta contra rayos UVA y UVB, textura no grasa.</p>
+          <div class="product-price">$20.00 USD</div>
+        </div>
+      </article>
+
+      <article class="product-card" tabindex="0">
+        <div class="product-image-container">
+          <img src="https://cdn.pixabay.com/photo/2017/12/10/14/47/oil-3012057_1280.jpg" alt="Aceite Facial Nutritivo" />
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">Aceite Facial Nutritivo</h2>
+          <p class="product-desc">Con argán y jojoba para revitalizar la piel cansada y seca.</p>
+          <div class="product-price">$27.99 USD</div>
+        </div>
+      </article>
+
+      <article class="product-card" tabindex="0">
+        <div class="product-image-container">
+          <img src="https://cdn.pixabay.com/photo/2017/07/31/22/26/cosmetics-2557571_1280.jpg" alt="Mascarilla Facial de Arcilla" />
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">Mascarilla Facial de Arcilla</h2>
+          <p class="product-desc">Purifica y limpia los poros para un rostro más fresco y radiante.</p>
+          <div class="product-price">$19.80 USD</div>
+        </div>
+      </article>
+
+      <article class="product-card" tabindex="0">
+        <div class="product-image-container">
+          <img src="https://cdn.pixabay.com/photo/2015/07/26/10/11/rose-859303_1280.jpg" alt="Tónico Refrescante" />
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">Tónico Refrescante</h2>
+          <p class="product-desc">Con extracto de rosas para calmar e hidratar la piel sensible.</p>
+          <div class="product-price">$16.40 USD</div>
+        </div>
+      </article>
+
+      <article class="product-card" tabindex="0">
+        <div class="product-image-container">
+          <img src="https://cdn.pixabay.com/photo/2016/02/19/10/00/sponge-1209982_1280.jpg" alt="Esponja Facial Exfoliante" />
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">Esponja Facial Exfoliante</h2>
+          <p class="product-desc">Elimina células muertas suavemente, para un cutis renovado.</p>
+          <div class="product-price">$9.99 USD</div>
+        </div>
+      </article>
+
+      <article class="product-card" tabindex="0">
+        <div class="product-image-container">
+          <img src="https://cdn.pixabay.com/photo/2019/04/10/20/24/lipstick-4114728_1280.jpg" alt="Bálsamo Labial Hidratante" />
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">Bálsamo Labial Hidratante</h2>
+          <p class="product-desc">Protege y nutre los labios con un toque natural y fresco.</p>
+          <div class="product-price">$7.50 USD</div>
+        </div>
+      </article>
+
+      <article class="product-card" tabindex="0">
+        <div class="product-image-container">
+          <img src="https://assets.unileversolutions.com/v1/1368277.png" alt="Crema de Noche Rejuvenecedora" />
+        </div>
+        <div class="product-info">
+          <h2 class="product-name">Crema de Noche Rejuvenecedora</h2>
+          <p class="product-desc">Regenera y nutre tu piel durante la noche para una piel radiante al despertar.</p>
+          <div class="product-price">$24.65 USD</div>
+        </div>
+      </article>
+    </div>
+  </main>
+  <footer>
+    &copy; 2025 Belleza Natural. Todos los derechos reservados.
+  </footer>
+</body>
+</html>
+
